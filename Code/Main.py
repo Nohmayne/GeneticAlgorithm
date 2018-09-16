@@ -6,8 +6,9 @@ class GenAlg:
     def __init__(self):
         #print('INFO: initializing main')
         # ------------------------------------------------------------------------------------------------
-        self.targetPhrase = '=>w|Iy Bj*,Kdiw'
-        self.populationobj = Population.Population(self.targetPhrase, 1, 200)
+        #self.targetPhrase = '=>w|Iy Bj*,Kdiw'
+        self.targetPhrase = input('Input phrase: ')
+        self.populationobj = Population.Population(self.targetPhrase, 0.3, 200)
         # ------------------------------------------------------------------------------------------------
         self.mutationrates = [0.9]
         self.row = 4
@@ -27,13 +28,13 @@ class GenAlg:
             self.populationobj.mutatepop()
             # ------------------------------------------------------------------------------------------------
             self.populationobj.evaluate()
-        if self.populationobj.finished:
-            self.populationobj.sheet.update_cell(self.row, self.column, self.populationobj.genNum)
+        # self.populationobj.finished:
+            #self.populationobj.sheet.update_cell(self.row, self.column, self.populationobj.genNum)
 
 
 genAlg = GenAlg()
-#genAlg.run()
-#"""
+genAlg.run()
+"""
 for i in range(0, len(genAlg.mutationrates)):
     for j in range(0, 204 - genAlg.row):
         genAlg.populationobj.__init__(genAlg.targetPhrase, genAlg.mutationrates[i], 200)

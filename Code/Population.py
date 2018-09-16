@@ -44,7 +44,7 @@ class Population:
         for dna in self.cpopulation:
             dna.fitnesscalc(self.target)
         self.cpopulation.sort(key=lambda x: x.fitness, reverse=True)
-        #print('INFO: Best Member of Population -- ' + ''.join(self.cpopulation[0].genome))
+        print('INFO: Best Member of Population -- ' + ''.join(self.cpopulation[0].genome))
 
     def makepool(self, sortedpop):
         pool = []
@@ -69,9 +69,9 @@ class Population:
     def evaluate(self):
         for indiv in self.cpopulation:
             if ''.join(indiv.genome) == self.target:
-                #print('INFO: Final Answer --')
-                #print(''.join(indiv.genome))
-                #print('INFO: Answer found in {} generations.'.format(self.genNum))
+                print('INFO: Final Answer --')
+                print(''.join(indiv.genome))
+                print('INFO: Answer found in {} generations.'.format(self.genNum))
                 # ------------------------------------------------------------------------------------------------
                 self.finished = True
                 break
