@@ -1,4 +1,4 @@
-import Population
+import Code.Population as Population
 
 
 class GenAlg:

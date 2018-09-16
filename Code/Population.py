@@ -1,4 +1,4 @@
-import DNA
+import Code.DNA as DNA
 from random import *
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
